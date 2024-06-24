@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: 'Gilroy-Regular';
+    src: local('Gilroy-Bold'), url(./fonts/Gilroy-Regular.woff2) format('truetype');
+  }
+
+body{
+    color: white;
+    font-family: 'Gilroy-Regular';
+    padding-top: 69px;
+    background: #141414;
+}
