@@ -14,7 +14,7 @@ function Details() {
 
   useEffect(() => {
     axios
-      .get(`https://api.escuelajs.co/api/v1/products/${productId}`)
+      .get('https://fakestoreapi.com/Products/${productId}`)
       .then((response) => {
         setProduct(response.data);
         setLoading(false);
