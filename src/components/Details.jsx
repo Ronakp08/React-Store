@@ -14,9 +14,10 @@ function Details() {
 
   useEffect(() => {
     axios
-      .get('https://fakestoreapi.com/Products/${productId}`)
+      .get(`https://fakestoreapi.com/Products/${productId}`)
       .then((response) => {
         setProduct(response.data);
+        console.log(response.data);
         setLoading(false);
       })
       .catch((error) => {
@@ -34,15 +35,11 @@ function Details() {
     <div className="w-full pt-4">
       <div className="flex flex-col md:flex-row">
         <div className="w-full md:w-1/2">
-          {product.images && (
             <div className="images hidden md:block flex-col p-8 cursor-zoom-in">
-              {product.images.map((image) => {
-                return <img key={image} src={image} alt="" className="object-contain" />;
-              })}
+               <img src={product.image} alt="" className="object-contain" />;
             </div>
-          )}
-          <div className="sm:hidden">
-            <ProductSlider key={product.id} images={product.images} />
+          <div className="p-6 rounded-md overflow-hidden sm:hidden">
+            <img src={product.image} alt="" />
           </div>
         </div>
         <div className="flex-1 py-8 w-[85%] mx-auto md:w-full">
